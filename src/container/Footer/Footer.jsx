@@ -112,7 +112,7 @@ const Footer = () => {
               value={number}
               onChange={handleChange}
               name='number'
-              pattern='[06789][0-9]'
+              pattern='[06789][0-9]{9}'
               title='Please enter valid phone number'
               required
             />
