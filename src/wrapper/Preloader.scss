@@ -1,0 +1,25 @@
+.preloader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--primary-color);
+  display: grid;
+  place-items: center;
+  .box {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    place-items: center;
+
+    .item {
+      width: 56%;
+      overflow: visible;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+  }
+}

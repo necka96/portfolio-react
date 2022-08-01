@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.scss";
+import { NavBar } from "./components";
+import { About, Footer, Header, Skills, Works } from "./container";
+import { Preloader } from "./wrapper";
+const App = () => {
+  const [preloader, setPreloader] = useState(true);
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setPreloader(false);
+    }, 2500);
 
-function App() {
+    return () => {
+      clearInterval(time);
+      setPreloader(false);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Preloader loading={preloader}>
+      <div className='app'>
+        <NavBar />
+        <Header />
+        <About />
+        <Works />
+        <Skills />
+        <Footer />
+      </div>
+    </Preloader>
   );
-}
+};
 
 export default App;

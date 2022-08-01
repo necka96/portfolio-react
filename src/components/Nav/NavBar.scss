@@ -1,0 +1,124 @@
+.app__navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  color: var(--gray-color);
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  .app__navbar-logo {
+    grid-column: 2 / span 4;
+    a {
+      font-style: italic;
+      color: var(--gray-color);
+      font-family: var(--font-sec);
+      span {
+        color: var(--secondary-color);
+      }
+    }
+  }
+  .app__navbar-links {
+    grid-column: 8 / span 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    li {
+      margin: 0 1rem;
+      cursor: pointer;
+      flex-direction: column;
+      div {
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        border-radius: 50%;
+        margin-bottom: 5px;
+      }
+      a {
+        text-decoration: none;
+        color: var(--gray-color);
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: var(--secondary-color);
+        }
+      }
+      &:hover {
+        div {
+          background: var(--secondary-color);
+        }
+      }
+    }
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+  .app__navbar-menu {
+    grid-column: 11 / span 2;
+    svg {
+      color: var(--white-color);
+      font-size: 2rem;
+    }
+    div {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 5;
+      padding: 1rem;
+      width: 80%;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
+      background: var(--primary-color);
+      svg {
+        color: var(--gray-color);
+        font-size: 2rem;
+        margin: 0.5rem 1rem;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+
+        li {
+          margin: 1rem;
+
+          a {
+            color: var(--gray-color);
+            text-decoration: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 500;
+
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              color: var(--secondary-color);
+            }
+          }
+        }
+      }
+      @media screen and (min-width: 900px) {
+        display: none;
+      }
+    }
+    @media screen and (min-width: 900px) {
+      display: none;
+    }
+  }
+}
