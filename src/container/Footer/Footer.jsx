@@ -139,7 +139,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             style={{ color: "var(--white-color)" }}
           >
-            Hvala vam sto ste me kontaktirali
+            Hvala Vam što ste me kontaktirali!
           </motion.h3>
         </div>
       )}

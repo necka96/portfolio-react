@@ -26,12 +26,12 @@ const Header = () => {
           <div className='badge-cmp app__flex'>
             <span>👋</span>
             <div style={{ marginLeft: 20 }}>
-              <p className='p-text'>Zdravo, Ja sam</p>
-              <h1 className='head-text'>Nemanja</h1>
+              <p className='p-text'>Zdravo, ja sam</p>
+              <h1 className='head-text'>Nemanja!</h1>
             </div>
           </div>
           <div className='tag-cmp app__flex'>
-            <p className='p-text'>Fronend Developer</p>
+            <p className='p-text'>Frontend Developer</p>
             <p className='p-text'>Freelancer</p>
           </div>
         </div>
