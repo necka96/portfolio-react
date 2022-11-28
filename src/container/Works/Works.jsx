@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import Pagenation from "../../components/Plaginaton/Pagenation";
 import { client, urlFor } from "./../../client";
 import AppWrap from "./../../wrapper/AppWrap";
 import "./Works.scss";
@@ -9,6 +10,8 @@ const Works = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWorks, setFilterWorks] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(3);
   useEffect(() => {
     const query = '*[_type == "works"] ';
     client.fetch(query).then((data) => {
@@ -16,6 +19,18 @@ const Works = () => {
       setFilterWorks(data);
     });
   }, []);
+
+  function post(item) {
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+      setCurrentPage(item);
+    }, 500);
+  }
+  const latsPostIndex = currentPage * postPerPage;
+  const firstPostIndex = latsPostIndex - postPerPage;
+
+  const currentPost = filterWorks.slice(firstPostIndex, latsPostIndex);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -65,7 +80,7 @@ const Works = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__work-portfolio'
       >
-        {filterWorks.map((work, index) => (
+        {currentPost.map((work, index) => (
           <div className='app__work-item app__flex' key={index}>
             <div className='app__work-img app__flex'>
               <img src={urlFor(work.imageUrl)} alt={work.name} />
@@ -112,6 +127,12 @@ const Works = () => {
           </div>
         ))}
       </motion.div>
+      <Pagenation
+        totalPost={works.length}
+        postPerPage={postPerPage}
+        post={post}
+        currentPage={currentPage}
+      />
     </>
   );
 };

@@ -1,0 +1,30 @@
+.app__pagenation {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin-top: 1rem;
+  .app__pagenation-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--white-color);
+    color: #000;
+    font-weight: 800;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--secondary-color);
+      color: #fff;
+    }
+    &.active {
+      background-color: var(--secondary-color);
+      color: #fff;
+    }
+  }
+}
