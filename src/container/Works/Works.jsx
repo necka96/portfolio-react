@@ -82,8 +82,12 @@ const Works = () => {
       >
         {currentPost.map((work, index) => (
           <div className='app__work-item app__flex' key={index}>
-            <div className='app__work-img app__flex'>
-              <img src={urlFor(work.imageUrl)} alt={work.name} />
+            <div
+              className='app__work-img app__flex'
+              style={{
+                backgroundImage: `url(${urlFor(work.imageUrl)})`,
+              }}
+            >
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
