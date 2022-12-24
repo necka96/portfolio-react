@@ -26,7 +26,7 @@ const Skills = () => {
         transition={{ duration: 0.5 }}
         style={{ color: "var(--white-color)" }}
       >
-        moje <span>veštine</span> i <span>iskustvo</span>
+        My <span>skills</span> and <span>experience</span>
       </motion.h2>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>

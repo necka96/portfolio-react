@@ -47,7 +47,7 @@ const Footer = () => {
         transition={{ duration: 0.5 }}
         style={{ color: "var(--white-color)" }}
       >
-        Razgovarajte sa <span>mnom</span>
+        Talk to me <span>me</span>
       </motion.h2>
       <motion.div
         className='app__footer-cards'
@@ -139,7 +139,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             style={{ color: "var(--white-color)" }}
           >
-            Hvala Vam što ste me kontaktirali!
+            Thank you for contacting me!
           </motion.h3>
         </div>
       )}

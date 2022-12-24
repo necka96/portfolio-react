@@ -89,13 +89,14 @@
   position: relative;
   min-width: 350px;
   overflow: hidden;
-  min-height: 375px;
+  height: 170px;
 
-  transition: background-position 4s ease;
+  transition: background-position 5s ease;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   background-position: top;
   background-size: 100%;
+  background-repeat: no-repeat;
   box-shadow: 0 5px 45px -10px var(--color-black-alpha);
 
   position: relative;

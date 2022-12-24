@@ -20,7 +20,7 @@ const About = () => {
         whileInView={{ scale: [0, 1] }}
         transition={{ duration: 0.5 }}
       >
-        O <span>meni</span>
+        About <span>me</span>
       </motion.h2>
       {abouts.map((about, index) => (
         <div className='app__about-holder' key={index}>
@@ -29,9 +29,6 @@ const About = () => {
             whileInView={{ x: [-100, 0], opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className='bold-text' style={{ color: "var(--white-color)" }}>
-              {about.name}{" "}
-            </h2>
             <p className='p-text' style={{ color: "var(--white-color)" }}>
               {about.info}
             </p>
@@ -41,7 +38,7 @@ const About = () => {
               rel='noreferrer'
               className='btn '
             >
-              <span>Online cv</span>
+              <span>View cv</span>
               <i></i>
             </a>
           </motion.div>

@@ -53,7 +53,7 @@ const Works = () => {
         transition={{ duration: 0.5 }}
         style={{ color: "var(--white-color)" }}
       >
-        Moj <span>portfolio</span>
+        My <span>portfolio</span>
       </motion.h2>
       <div className='app__work-filter'>
         {[
@@ -121,7 +121,10 @@ const Works = () => {
             </div>
             <div className='app__work-content app__flex'>
               <h4 className='bold-text'>{work.title}</h4>
-              <p className='p-text' style={{ marginTop: 10 }}>
+              <p
+                className='p-text'
+                style={{ marginTop: 10, textAlign: "center" }}
+              >
                 {work.description}
               </p>
               <div className='app__work-tag app__flex'>
