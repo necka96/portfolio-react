@@ -2,7 +2,7 @@ import React from "react";
 import "./Pagenation.scss";
 const Pagenation = ({ totalPost, postPerPage, post, currentPage }) => {
   let page = [];
-  for (let i = 1; i < Math.ceil(totalPost / postPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalPost / postPerPage); i++) {
     page.push(i);
   }
   return (

@@ -135,7 +135,7 @@ const Works = () => {
         ))}
       </motion.div>
       <Pagenation
-        totalPost={works.length}
+        totalPost={filterWorks.length}
         postPerPage={postPerPage}
         post={post}
         currentPage={currentPage}
