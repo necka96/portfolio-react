@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillLinkedin } from "react-icons/ai";
 import { FiFacebook, FiInstagram } from "react-icons/fi";
 const SocialMedia = () => {
   return (
@@ -23,13 +24,16 @@ const SocialMedia = () => {
           <FiFacebook />
         </a>
       </div>
-      {/** 
-        <div>
-          <a href='#' target='_blank' rel='noreferrer'>
-            <AiFillLinkedin />
-          </a>
-        </div>
-      */}
+
+      <div>
+        <a
+          href='https://www.linkedin.com/in/nemanja-djordjevic-26194b19b/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <AiFillLinkedin />
+        </a>
+      </div>
     </div>
   );
 };

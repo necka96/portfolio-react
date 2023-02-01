@@ -11,7 +11,7 @@ const Works = () => {
   const [works, setWorks] = useState([]);
   const [filterWorks, setFilterWorks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(3);
+  const [postPerPage, setPostPerPage] = useState(6);
   useEffect(() => {
     const query = '*[_type == "works"] ';
     client.fetch(query).then((data) => {
@@ -77,17 +77,22 @@ const Works = () => {
       </div>
       <motion.div
         animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        transition={{
+          duration: 0.5,
+          delayChildren: 0.5,
+          ease: "easeInOut",
+          type: "tween",
+        }}
         className='app__work-portfolio'
       >
         {currentPost.map((work, index) => (
           <div className='app__work-item app__flex' key={index}>
-            <div
-              className='app__work-img app__flex'
-              style={{
-                backgroundImage: `url(${urlFor(work.imageUrl)})`,
-              }}
-            >
+            <div className='app__work-img app__flex'>
+              <img
+                src={urlFor(work.imageUrl)}
+                alt={work.title}
+                loading='lazy'
+              />
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
