@@ -59,8 +59,9 @@ const Works = () => {
         {[
           "All",
           "Vanilla JS",
-          "React Js",
           "Jquery",
+          "React Js",
+          "Node js",
           "Bootstrap",
           "Tailwind css",
         ].map((item, index) => (
