@@ -147,4 +147,4 @@ const Footer = () => {
   );
 };
 
-export default AppWrap(Footer, "contact");
+export default AppWrap(Footer, "contact", "app__footer-container");

@@ -15,14 +15,16 @@ const NavBar = () => {
         </h2>
       </div>
       <ul className='app__navbar-links'>
-        {["home", "about", "work", "skills", "contact"].map((item, index) => (
-          <li key={index} className='app__flex p-text'>
-            <div />
-            <a href={`#${item}`} style={{ color: "var(--white-color)" }}>
-              {item}
-            </a>
-          </li>
-        ))}
+        {["home", "about", "work", "skills", "testimonial", "contact"].map(
+          (item, index) => (
+            <li key={index} className='app__flex p-text'>
+              <div />
+              <a href={`#${item}`} style={{ color: "var(--white-color)" }}>
+                {item}
+              </a>
+            </li>
+          )
+        )}
       </ul>
 
       <div className='app__navbar-menu'>

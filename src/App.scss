@@ -165,7 +165,7 @@
 }
 
 .app__social {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
@@ -177,9 +177,10 @@
     height: 40px;
     border-radius: 50%;
     background-color: var(--white-color);
+    background: #333;
     margin: 0.25rem 0;
-    border: 1px solid var(--lightGray-color);
 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,7 +194,7 @@
       svg {
         width: 15px;
         height: 15px;
-        color: var(--gray-color);
+        color: var(--white-color);
       }
     }
     &:hover {
@@ -217,14 +218,16 @@
       }
     }
   }
+  @media screen and (min-width: 1300px) {
+    display: flex;
+  }
 }
 
 .app__navigation {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  display: none;
   padding: 1rem;
 
   .app__navigation-dot {
@@ -245,14 +248,12 @@
       height: 20px;
     }
   }
+  @media screen and (min-width: 1300px) {
+    display: flex;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  .app__navigation,
-  .app__social {
-    display: none;
-  }
-
   .copyright {
     padding: 2rem;
   }

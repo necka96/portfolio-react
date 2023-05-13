@@ -1,23 +1,26 @@
 .app__pagenation {
-  flex-wrap: wrap;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  gap: 10px;
 
-  margin-top: 1rem;
+  height: 4rem;
+  align-items: flex-end;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.75rem;
+  background: #333333;
   .app__pagenation-btn {
-    width: 40px;
-    height: 40px;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    background-color: var(--white-color);
-    color: #000;
+    width: 2.5rem;
+    border-radius: 50%;
+    background: #fff;
+    color: #333;
     font-weight: 800;
     text-transform: capitalize;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0.5rem;
-    transition: all 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 1 / 1;
+
     &:hover {
       background-color: var(--secondary-color);
       color: #fff;

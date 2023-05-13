@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import { NavBar } from "./components";
-import { About, Footer, Header, Skills, Works } from "./container";
+import { About, Footer, Header, Skills, Testimonial, Works } from "./container";
 import { Preloader } from "./wrapper";
 const App = () => {
   const [preloader, setPreloader] = useState(true);
@@ -24,6 +24,7 @@ const App = () => {
         <About />
         <Works />
         <Skills />
+        <Testimonial />
         <Footer />
       </div>
     </Preloader>
