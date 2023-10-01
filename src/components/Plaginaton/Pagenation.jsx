@@ -1,7 +1,13 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import "./Pagenation.scss";
-const Pagenation = ({ totalPost, postPerPage, post, currentPage }) => {
+const Pagenation = ({
+  totalPost,
+  postPerPage,
+  post,
+  currentPage,
+  selectedId,
+}) => {
   let page = [];
   for (let i = 1; i <= Math.ceil(totalPost / postPerPage); i++) {
     page.push(i);
@@ -28,6 +34,7 @@ const Pagenation = ({ totalPost, postPerPage, post, currentPage }) => {
           post={post}
           key={i}
           mouseX={mouseX}
+          setSelectedId={selectedId}
         />
       ))}
     </div>
@@ -36,7 +43,7 @@ const Pagenation = ({ totalPost, postPerPage, post, currentPage }) => {
 
 export default Pagenation;
 
-function AppIcon({ item, currentPage, post, mouseX }) {
+function AppIcon({ item, currentPage, post, mouseX, setSelectedId }) {
   let ref = useRef(null);
   let distance = useTransform(mouseX, (val) => {
     let bounce = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -44,6 +51,10 @@ function AppIcon({ item, currentPage, post, mouseX }) {
   });
   let widthSync = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   let width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
+  const handleClick = (item) => {
+    setSelectedId();
+    post(item);
+  };
   return (
     <motion.div
       ref={ref}
@@ -51,7 +62,7 @@ function AppIcon({ item, currentPage, post, mouseX }) {
       className={`app__pagenation-btn app__flex ${
         currentPage === item ? "active" : ""
       }`}
-      onClick={() => post(item)}
+      onClick={() => handleClick(item)}
     >
       {item}
     </motion.div>

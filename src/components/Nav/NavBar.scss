@@ -6,7 +6,7 @@
   align-items: center;
   padding: 1rem 2rem;
   position: fixed;
-  z-index: 2;
+  z-index: 9999;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -79,7 +79,7 @@
       flex-direction: column;
       background: var(--primary-color);
       svg {
-        color: var(--gray-color);
+        color: var(--white-color);
         font-size: 2rem;
         margin: 0.5rem 1rem;
       }

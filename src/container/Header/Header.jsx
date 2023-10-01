@@ -15,6 +15,13 @@ const Header = () => {
       },
     },
   };
+  const handleScroll = () => {
+    const skills = document.getElementById("skills");
+    window.scrollTo({
+      top: skills.getBoundingClientRect().top,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className='app__header app__flex'>
@@ -57,7 +64,11 @@ const Header = () => {
         className='app__header-circles'
       >
         {[images.react, images.js, images.node].map((circle, index) => (
-          <div className='circle-cmp app__flex' key={`circle-${index}`}>
+          <div
+            className='circle-cmp app__flex'
+            key={`circle-${index}`}
+            onClick={handleScroll}
+          >
             <img src={circle} alt='profile_bg' />
           </div>
         ))}

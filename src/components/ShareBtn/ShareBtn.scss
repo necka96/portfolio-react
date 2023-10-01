@@ -1,0 +1,11 @@
+.icon {
+  display: flex;
+  gap: 10px;
+  svg {
+    font-size: large;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+}

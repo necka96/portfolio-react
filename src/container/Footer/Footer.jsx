@@ -47,7 +47,7 @@ const Footer = () => {
         transition={{ duration: 0.5 }}
         style={{ color: "var(--white-color)" }}
       >
-        Talk to me <span>me</span>
+        Talk to <span>me</span>
       </motion.h2>
       <motion.div
         className='app__footer-cards'

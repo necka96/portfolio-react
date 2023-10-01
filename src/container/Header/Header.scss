@@ -1,7 +1,8 @@
 #home {
   position: relative;
-
+  min-height: 100vh !important;
   // disable the default padding styles
+  padding-top: 1rem;
   .app__wrapper {
     padding: 0;
 
@@ -10,7 +11,9 @@
     }
   }
 }
-
+.circle-cmp {
+  cursor: pointer;
+}
 .app__header {
   flex: 1;
   width: 100%;
